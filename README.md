@@ -6,23 +6,27 @@
 Terraform module that integrate PagerDuty to SNS topic.
 It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| create | Whether to create all the resources | string | `"true"` | no |
-| create\_sns\_topic | Whether to create new SNS topic | string | `"true"` | no |
+| create | Whether to create all the resources | bool | `"true"` | no |
+| create\_sns\_topic | Whether to create new SNS topic | bool | `"true"` | no |
 | display\_name | The display name for the SNS topic | string | `""` | no |
 | kms\_master\_key\_id | The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK | string | `""` | no |
 | pagerduty\_endpoint | The PagerDuty HTTPS endpoint where SNS notifications will be sent to | string | n/a | yes |
 | sns\_topic\_name | The name of SNS topic to create or reference | string | n/a | yes |
-| tags | A map of tags to add to the sns_topic resource | map | `<map>` | no |
+| tags | A map of tags to add to the sns_topic resource | map(string) | `{}` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
 | sns\_topic\_arn | The ARN of the SNS topic |
+
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 
 ## Examples
 
